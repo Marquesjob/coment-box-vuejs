@@ -61,12 +61,21 @@
                 }
             },
             methods: {
+
+
                 addComment(){
-                  this.comments.push({
-                    name: this.name,
-                    message: this.message
-                  })
+                    
+                    if(this.name.trim() === '' || this.message.trim() === ''){
+                        return;
+                    }
+
+                    this.comments.push({
+                        name: this.name,
+                        message: this.message
+                    })
+
                 },
+
                 deleteComment(){
                 }
             }
