@@ -20,7 +20,8 @@
 
         data() {
             return {
-               comments: []
+               name: '',
+               message: ''
             }
         },
 
