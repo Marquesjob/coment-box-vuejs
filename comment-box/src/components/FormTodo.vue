@@ -1,0 +1,47 @@
+<template>
+     <div class="form-todo form-group">
+            <p>
+                <input placeholder="Nome" type="text" name="author" class="form-control" v-model="name">
+            </p>
+            <p>
+                <textarea placeholder="Comentário" name="message" class="form-control" v-model="message"></textarea>
+            </p>
+            <button v-on:click="addComment()" type="submit" class="btn btn-primary mb-3">Comentar</button>
+        </div>
+</template>
+
+<script>
+    import FormTodo from './FormTodo'
+    export default {
+
+        components: {
+            FormTodo
+        },
+
+        data() {
+            return {
+               comments: []
+            }
+        },
+
+        methods: {
+
+                addComment() {
+
+                if (this.message.trim() === '') {
+                    return;
+                }
+
+                this.$emit('add-todo', {
+                    name: this.name,
+                    message: this.message,
+                })
+
+                this.name = '';
+                this.message = '';                
+
+            }
+            
+        }
+    }
+</script>
