@@ -1,5 +1,7 @@
 # comment-box
 
+Pequeno comment box criado com finalidade de estudar as funcionalidades basicas do vueJS.
+
 ## Project setup
 ```
 npm install
